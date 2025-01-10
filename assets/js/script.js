@@ -127,9 +127,14 @@ function displayAdditionQuestion(operand1, operand2) {
     
 }
 
+/**
+ * Make sure operand1 is always greater then operand2
+ * Use IF Statement or Conditional (ternary) operator
+ * "operand1 > operand2" (IF QUESTION) "operand1" TRUE : "operand2" IF NOT TRUE 
+ */
 function displaySubtractQuestion(operand1, operand2) {
-    document.getElementById("operand1").textContent = operand1;
-    document.getElementById("operand2").textContent = operand2;
+    document.getElementById("operand1").textContent = operand1 > operand2 ? operand1 : operand2; // works exactly as an IF statement
+    document.getElementById("operand2").textContent = operand1 > operand2 ? operand2 : operand1;
     document.getElementById("operator").textContent = "-";
     
 }
