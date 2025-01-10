@@ -22,6 +22,16 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+
+    /**
+     * If "Enter" is pressed ist it also checks the "checkAnswer" function. 
+     */
+    document.getElementById("answer-box").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            checkAnswer();
+        }
+    })
+
     runGame("addition"); // FUNCTION CALL starts game as soon as page is loaded or refreshed
 
 });
@@ -32,6 +42,9 @@ document.addEventListener("DOMContentLoaded", function() {
  * after the user's answer has been processed
  */
 function runGame(gameType) {
+
+    document.getElementById("answer-box").value =""; // Empties the Answer Box
+    document.getElementById("answer-box").focus(); // Moves cursor to Answer-Box
 
     // Creates two random numbers between 1 and 25
     let num1 = Math.floor(Math.random() * 25) + 1;
